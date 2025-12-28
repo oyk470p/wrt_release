@@ -43,45 +43,6 @@ jdc_ax6600_wifi_cfg() {
 	configure_wifi 0 149 HE80 22 'JDC_AX6600_5G1' '12345678'
 	configure_wifi 1 1 HE20 22 'JDC_AX6600' '12345678'
 	configure_wifi 2 44 HE160 23 'JDC_AX6600_5G2' '12345678'
-}
-
-redmi_ax5_wifi_cfg() {
-	configure_wifi 0 149 HE80 20 'Redmi_AX5_5G' '12345678'
-	configure_wifi 1 1 HE20 20 'Redmi_AX5' '12345678'
-}
-
-aliyun_ap8220_wifi_cfg() {
-	configure_wifi 0 149 HE80 26 'Aliyun_AP8220_5G' '12345678'
-	configure_wifi 1 1 HE20 23 'Aliyun_AP8220' '12345678'
-}
-
-cmcc_rax3000m_wifi_cfg() {
-	configure_wifi 0 1 HE20 23 'CMCC_RAX3000M' '12345678'
-	configure_wifi 1 44 HE160 25 'CMCC_RAX3000M_5G' '12345678'
-}
-
-redmi_ax6_wifi_cfg() {
-	configure_wifi 0 149 HE80 22 'Redmi_AX6_5G' '12345678'
-	configure_wifi 1 1 HE20 21 'Redmi_AX6' '12345678'
-}
-
-qihoo_360v6_wifi_cfg() {
-	configure_wifi 0 1 HE80 20 'Qihoo_360V6' '12345678'
-	configure_wifi 1 149 HE20 20 'Qihoo_360V6_5G' '12345678'
-}
-
-linksys_mx4x00_wifi_cfg() {
-	configure_wifi 0 1 EHT20 22 'Linksys_MX4X00' '12345678'
-	configure_wifi 1 149 EHT80 21 'Linksys_MX4X00_5G1' '12345678'
-	configure_wifi 2 44 EHT80 21 'Linksys_MX4X00_5G2' '12345678'
-}
-
-gemtek_w1701k_wifi_cfg() {
-	configure_wifi 0 1 EHT20 23 'Gemtek_W1701K' '12345678'
-	configure_wifi 1 44 EHT160 23 'Gemtek_W1701K_5G' '12345678'
-	configure_wifi 2 1 EHT320 23 'Gemtek_W1701K_6G' '12345678' 'sae'
-    uci set wireless.radio2.disabled='1'
-}
 
 case "${board_name}" in
 jdcloud,ax1800-pro | \
@@ -91,34 +52,6 @@ jdcloud,ax1800-pro | \
 jdcloud,ax6600 | \
 	jdcloud,re-cs-02)
 	jdc_ax6600_wifi_cfg
-	;;
-redmi,ax5 | \
-	redmi,ax5-jdcloud)
-	redmi_ax5_wifi_cfg
-	;;
-aliyun,ap8220)
-	aliyun_ap8220_wifi_cfg
-	;;
-cmcc,rax3000m)
-	cmcc_rax3000m_wifi_cfg
-	;;
-redmi,ax6 | \
-	redmi,ax6-stock)
-	redmi_ax6_wifi_cfg
-	;;
-qihoo,360v6)
-	qihoo_360v6_wifi_cfg
-	;;
-linksys,mx4200v1 | \
-	linksys,mx4200v2 | \
-	linksys,mx4300)
-	linksys_mx4x00_wifi_cfg
-	;;
-gemtek,w1701k)
-	gemtek_w1701k_wifi_cfg
-	;;
-*)
-	exit 0
 	;;
 esac
 
