@@ -1,20 +1,3 @@
-#!/usr/bin/env bash
-#
-# Copyright (C) 2025 ZqinKing
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program. If not, see <https://www.gnu.org/licenses/>.
-
 set -e
 set -o errexit
 set -o errtrace
@@ -111,9 +94,9 @@ update_feeds() {
 
 remove_unwanted_packages() {
     local luci_packages=(
-        "luci-app-passwall" "luci-app-ddns-go" "luci-app-rclone" "luci-app-ssr-plus"
+        "luci-app-ddns-go" "luci-app-rclone" "luci-app-ssr-plus"
         "luci-app-vssr" "luci-app-daed" "luci-app-dae" "luci-app-alist" "luci-app-homeproxy"
-        "luci-app-haproxy-tcp" "luci-app-openclash" "luci-app-mihomo" "luci-app-appfilter"
+        "luci-app-haproxy-tcp" "luci-app-mihomo" "luci-app-appfilter"
         "luci-app-msd_lite"
     )
     local packages_net=(
