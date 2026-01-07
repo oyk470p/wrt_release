@@ -20,7 +20,7 @@ COMMIT_HASH=$4
 FEEDS_CONF="feeds.conf.default"
 GOLANG_REPO="https://github.com/sbwml/packages_lang_golang"
 GOLANG_BRANCH="25.x"
-THEME_SET="argon"
+THEME_SET="aurora"
 LAN_ADDR="192.168.1.1"
 
 clone_repo() {
@@ -1026,16 +1026,16 @@ remove_tweaked_packages() {
     fi
 }
 
-update_argon() {
-    local repo_url="https://github.com/ZqinKing/luci-theme-argon.git"
-    local dst_theme_path="$BUILD_DIR/feeds/luci/themes/luci-theme-argon"
+update_aurora() {
+    local repo_url="https://github.com/eamonxg/luci-theme-aurora.git"
+    local dst_theme_path="$BUILD_DIR/feeds/luci/themes/luci-theme-aurora"
     local tmp_dir
     tmp_dir=$(mktemp -d)
 
-    echo "正在更新 argon 主题..."
+    echo "正在更新 aurora 主题..."
 
     if ! git clone --depth 1 "$repo_url" "$tmp_dir"; then
-        echo "错误：从 $repo_url 克隆 argon 主题仓库失败" >&2
+        echo "错误：从 $repo_url 克隆 aurora 主题仓库失败" >&2
         rm -rf "$tmp_dir"
         exit 1
     fi
@@ -1044,7 +1044,7 @@ update_argon() {
     rm -rf "$tmp_dir/.git"
     mv "$tmp_dir" "$dst_theme_path"
 
-    echo "luci-theme-argon 更新完成"
+    echo "luci-theme-aurora 更新完成"
 }
 
 fix_easytier_lua() {
@@ -1129,7 +1129,7 @@ main() {
     update_diskman
     set_nginx_default_config
     update_uwsgi_limit_as
-    update_argon
+    update_aurora
     update_nginx_ubus_module # 更新 nginx-mod-ubus 模块
     check_default_settings
     install_opkg_distfeeds
