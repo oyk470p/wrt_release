@@ -233,7 +233,7 @@ fix_default_set() {
         find "$BUILD_DIR/feeds/luci/collections/" -type f -name "Makefile" -exec sed -i "s/luci-theme-bootstrap/luci-theme-$THEME_SET/g" {} \;
     fi
 
-    install -Dm544 "$BASE_PATH/patches/990_set_argon_primary" "$BUILD_DIR/package/base-files/files/etc/uci-defaults/990_set_argon_primary"
+    install -Dm544 "$BASE_PATH/patches/990_set_aurora_primary" "$BUILD_DIR/package/base-files/files/etc/uci-defaults/990_set_aurora_primary"
     install -Dm544 "$BASE_PATH/patches/991_custom_settings" "$BUILD_DIR/package/base-files/files/etc/uci-defaults/991_custom_settings"
     install -Dm544 "$BASE_PATH/patches/992_set-wifi-uci.sh" "$BUILD_DIR/package/base-files/files/etc/uci-defaults/992_set-wifi-uci.sh"
 
@@ -1028,6 +1028,7 @@ remove_tweaked_packages() {
 
 update_aurora() {
     local repo_url="https://github.com/eamonxg/luci-theme-aurora.git"
+	local repo_url="https://github.com/eamonxg/luci-app-aurora-config.git"
     local dst_theme_path="$BUILD_DIR/feeds/luci/themes/luci-theme-aurora"
     local tmp_dir
     tmp_dir=$(mktemp -d)
