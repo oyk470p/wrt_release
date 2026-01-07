@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ ! -f /etc/config/aurora ]; then
+    touch /etc/config/aurora
+    uci add aurora global
+fi
+
+uci set aurora.@global[0].primary='#6A89CC'
+uci set aurora.@global[0].transparency='0.3'
+uci commit aurora
