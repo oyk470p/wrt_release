@@ -1,4 +1,4 @@
-name: Release WRT
+name: ophub打包
 run-name: Release - ${{ inputs.model }}
 
 on:
