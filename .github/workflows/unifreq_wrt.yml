@@ -11,9 +11,12 @@ on:
         default: n1_immwrt
         options:
           - jdcloud_ax6000_immwrt
+          - jdcloud_ax6000_immwrt24
           - jdcloud_ipq60xx_immwrt
           - jdcloud_ipq60xx_libwrt
           - n1_immwrt
+          - n1_immwrt24          
+          - n1_immwrt612
 
 
 env:
