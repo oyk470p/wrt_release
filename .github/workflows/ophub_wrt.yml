@@ -103,7 +103,7 @@ jobs:
           echo "=============================================="
 
       - name: Package OpenWrt Firmware
-        if: ${{ inputs.model == 'n1_immwrt' }}
+        if: ${{ inputs.model == 'n1_immwrt24' }}
         uses: ophub/amlogic-s9xxx-openwrt@main
         env:
           openwrt_path: firmware/*.tar.gz
