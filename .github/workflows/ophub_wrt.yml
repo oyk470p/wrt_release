@@ -106,7 +106,7 @@ jobs:
         if: ${{ inputs.model == 'n1_immwrt24' }}
         uses: ophub/amlogic-s9xxx-openwrt@main
         env:
-          openwrt_path: firmware/*.tar.gz
+          openwrt_path: openwrt/bin/targets/*/*/*rootfs.tar.gz
           openwrt_board: s905d
           openwrt_kernel: 6.12.y
           auto_kernel: true
