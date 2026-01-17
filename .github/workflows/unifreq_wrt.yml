@@ -103,7 +103,7 @@ jobs:
           echo "=============================================="
 
       - name: Package OpenWrt Firmware
-        if: ${{ inputs.model == 'n1_immwrt24' }}
+        if: ${{ inputs.model == 'n1_immwrt612' }}
         uses: unifreq/openwrt_packit@master
         env:
           OPENWRT_ARMVIRT: firmware/*.tar.gz
@@ -125,5 +125,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.BUILD_DATE }}_${{ inputs.model }}
-          files: ${{ inputs.model == 'n1_immwrt24' && env.PACKAGED_OUTPUTPATH || './firmware' }}/*.*
+          files: ${{ inputs.model == 'n1_immwrt612' && env.PACKAGED_OUTPUTPATH || './firmware' }}/*.*
           body_path: ./release_body.txt
